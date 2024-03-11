@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+void merge(int num1[],int n,int num2[],int m,int num3[]){
+int i=0;
+int j=0;
+int k=0;
+while(i<n && j<m){
+    if(num1[i]<num2[j]){
+        num3[k]=num1[i];
+        k++;
+        i++;
+    }else{
+        num3[k]=num2[j];
+        k++;
+        j++;
+    }
+}
+while(i<n){
+    num3[k++]=num1[i++];
+}
+while(j<m){
+    num3[k++]=num2[j++];
+}
+}
+void print(int ans[],int n){
+    for(int i=0;i<n;i++){
+        cout<<ans[i]<<" ";
+    }
+    cout<<endl;
+}
+
+    
+
+
+int main(){
+    int num1[3]={1,2,3};
+    int num2[3]={2,5,6};
+    int  num3[6] ={0};
+     merge( num1,6, num2 ,3,num3);
+      print(num3,6);
+    return 0;
+}
