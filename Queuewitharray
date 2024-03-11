@@ -1,0 +1,46 @@
+#include<iostream>
+#include<queue>
+#define capacity 10
+using namespace std;
+class impque{
+    public:
+        int arr[capacity];
+   
+      int  front ;
+      int rear;
+      impque(){
+        front = -1;
+        rear = -1;
+      }
+    
+    void enQueue(int ele){
+        if(rear==capacity-1){
+            cout<<"Queue is full"<<endl;
+        }else{
+            arr[rear]=ele;
+            rear++;
+        }
+          cout<<arr[rear]<<endl;
+    }
+    void deQueue(){
+        if(front==rear){
+            cout<<"Queue is empty"<<endl;
+        }else{
+            arr[front]=-1;
+            front++;
+        }
+          
+    }
+
+
+};
+int main(){
+    queue <int> n;
+    impque q ;
+    q.enQueue(27);
+    q.enQueue(28);
+    q.enQueue(29);
+    q.enQueue(20);
+
+
+}
